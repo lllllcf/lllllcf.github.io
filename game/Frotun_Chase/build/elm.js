@@ -751,11 +751,6 @@ function _Debug_crash(identifier, fact1, fact2, fact3, fact4)
 
 		case 5:
 			throw new Error('Trying to use `(==)` on functions.\nThere is no way to know if functions are "the same" in the Elm sense.\nRead more about this at https://package.elm-lang.org/packages/elm/core/latest/Basics#== which describes why it is this way and what the better version will look like.');
-
-		case 6:
-			var moduleName = fact1;
-			throw new Error('Your page is loading multiple Elm scripts with a module named ' + moduleName + '. Maybe a duplicate script is getting loaded accidentally? If not, rename one of them so I know which is which!');
-
 		case 8:
 			var moduleName = fact1;
 			var region = fact2;

@@ -1,3 +1,4 @@
+
 function hide(selectedChara){
 	document.getElementById(selectedChara+'_exp').style.visibility="hidden";
     document.getElementById(selectedChara+'_tte').style.visibility="hidden";
@@ -106,8 +107,7 @@ function dispTuto(){
 	document.getElementById("continue").style.zIndex = -3;
 	document.getElementById("SelectTitle").style.visibility = "hidden";
 	document.getElementById("SelectTitle").style.zIndex = -3;
-	hide(localStorage.getItem("player"));
-
+	if (localStorage.getItem("player") != null){ hide(localStorage.getItem("player")); }
 }
 function check(){
 	if (localStorage.getItem("checked") == null){
@@ -143,13 +143,13 @@ function dispHome(){
 	document.getElementById("continue").style.zIndex = -3;
 	document.getElementById("SelectTitle").style.visibility = "hidden";
 	document.getElementById("SelectTitle").style.zIndex = -3;
-	hide(localStorage.getItem("player"));
+	if (localStorage.getItem("player") != null){ hide(localStorage.getItem("player")); }
 
 	document.getElementById("Manual").style.visibility = "hidden";
 	document.getElementById("PreArrow").style.visibility = "hidden";
 	document.getElementById("NextArrow").style.visibility = "hidden";
 	document.getElementById("slides").style.visibility = "hidden";
-	document.getElementById("page" + localStorage.getItem("last")).style.visibility = "hidden";
+	if (localStorage.getItem("last") != null){document.getElementById("page" + localStorage.getItem("last")).style.visibility = "hidden";}
 	document.getElementById("HReturn").style.visibility = "hidden";
 	document.getElementById("HReturn").style.zIndex = -3;
 
@@ -220,7 +220,7 @@ function dispGame(){
 	document.getElementById("continue").style.zIndex = -3;
 	document.getElementById("SelectTitle").style.visibility = "hidden";
 	document.getElementById("SelectTitle").style.zIndex = -3;
-	hide(localStorage.getItem("player"));
+	if (localStorage.getItem("player") != null){ hide(localStorage.getItem("player")); }
 	document.getElementById("Tuto_0").style.visibility = "hidden";
 	document.getElementById("susumu").style.visibility = "hidden";
 	document.getElementById("susumu").style.zIndex = -2;
