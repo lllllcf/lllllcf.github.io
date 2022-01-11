@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Fortun Chase</title>
+  <script src="elm.js"></script>
+  <link rel="stylesheet"  href="./src/css/button.css" />
+  <link rel="stylesheet"  href="./src/css/video.css" />
+  <link rel="stylesheet"  href="./src/css/slide.css" />
+  <script src="set.js"></script>
+  <script src="elm.js"></script>
+</head>
+
+<body style="cursor: url(./src/img/cursor.cur),move" onload="/*unhide(localStorage.getItem('player'));*/">
+  <div class="fullscreen" id = "fullscreen" style="z-index: -2;">
+
+  <video muted autoplay class="fullscreen_video" id="MainLogo" style="z-index: 4;" onended="dispHome();">
+    <source src="./src/img/TeamDisplay.mp4" type="video/mp4">
+  </video>
+  <video muted autoplay loop class="fullscreen_video" id="bg">
+    <source src="./src/img/BackgroundLoop.mp4" type="video/mp4">
+  </video>
+  </div>
+
+<!-- HomePage -->  
+    <img src="./src/img/Title.png" id="HomeTitle" style="width:50%; position: fixed; right: -5%; top: 20%; visibility: hidden;">
+    <img src="./src/img/Logo&Version.png" id="HomeLogo" style="height:9%; position: fixed; left: 1%; bottom: 5%;  visibility: hidden;">
+    <div id="New" class="normal-button-wrap normal-button-wrap--silver" style="position: fixed; left: 45%; top: 30%; z-index: 2; visibility: hidden;" onclick="dispSelect();">
+      <a class="btn normal-button" style="cursor: url(./src/img/cursor.cur),move"><span class="btn-text-gradient--silver">New</span></a>
+    </div>
+    <div id="Help" class="normal-button-wrap normal-button-wrap--silver" style="position: fixed; left: 44.8%; top: 42%; z-index: 2; visibility: hidden;" onclick="dispHelp();">
+      <a class="btn normal-button" style="cursor: url(./src/img/cursor.cur),move"><span class="btn-text-gradient--silver">Help</span></a>
+    </div>
+    <div id="More" class="normal-button-wrap normal-button-wrap--silver" style="position: fixed; left: 44.5%; top: 54%; z-index: 2; visibility: hidden;" onclick="dispAbout();">
+      <a class="btn normal-button" style="cursor: url(./src/img/cursor.cur),move"><span class="btn-text-gradient--silver">More</span></a>
+    </div>
+<!-- HomePage -->
+
+<!-- SelectionPage -->
+    <img src="./src/img/SelectTitle.png" id="SelectTitle" style="width: 65%; position: fixed; left: -10%; top: -15%; visibility: hidden; z-index: -3;">
+    <img src="./src/img/Lance.png" id="Lance_exp" style="visibility: hidden; height: 40%; position: fixed; right: -2%; top: 20%">
+    <img src="./src/img/Lance_tte.png" id="Lance_tte" style="visibility: hidden; width: 20%; position: fixed; right: 40%; bottom: 0%">
+    <img src="./src/img/Gorman.png" id="Gorman_exp" style="visibility: hidden; height: 40%; position: fixed; right: -2%; top: 20%">
+    <img src="./src/img/Gorman_tte.png" id="Gorman_tte" style="visibility: hidden; width: 28%; position: fixed; right: 35%; bottom: 0">
+    <img src="./src/img/Doherty.png" id="Doherty_exp" style="visibility: hidden; height: 40%; position: fixed; right: -2%; top: 20%">
+    <img src="./src/img/Doherty_tte.png" id="Doherty_tte" style="visibility: hidden; width: 20%; position: fixed; right: 40%; bottom: 0">
+    <img src="./src/img/Blair.png" id="Blair_exp" style="visibility: hidden; height: 40%; position: fixed; right: -2%; top: 20%">
+    <img src="./src/img/Blair_tte.png" id="Blair_tte" style="visibility: hidden; width: 20%; position: fixed; right: 37%; top: 18%">
+    <img src="./src/img/navi.png" id="Snavi" style="width: 3%; position: fixed; left: 25%; top: 26%; /*z-index: -3;*/ visibility: hidden;">
+    <img src="./src/img/Tuto_0.png" id="Tuto_0" style="width: 50%; height: 100%; position: fixed; left: 25%; top: 0%; z-index: 1; visibility: hidden;">
+    <br><br><br>
+    <div id="Lance" class="normal-button-wrap normal-button-wrap--yellow" onclick="unhide('Lance');" style="position: fixed; left: 5%; top: 25%; z-index: -3; visibility: hidden;"> 
+     <a class="btn normal-button" style="cursor: url(./src/img/cursor.cur),move"><span class="btn-text-gradient--silver">Lance</span></a></div>
+    <div id="Gorman" class="normal-button-wrap normal-button-wrap--rose" onclick="unhide('Gorman');" style="position: fixed; left: 5%; top: 40%; z-index: -3; visibility: hidden;">
+      <a class="btn normal-button" style="cursor: url(./src/img/cursor.cur),move"><span class="btn-text-gradient--silver">Gorman</span></a></div>
+    <div id="Doherty" class="normal-button-wrap normal-button-wrap--blue" onclick="unhide('Doherty');" style="position: fixed; left: 5%; top: 55%; z-index: -3; visibility: hidden;">
+      <a class="btn normal-button" style="cursor: url(./src/img/cursor.cur),move"><span class="btn-text-gradient--silver">Doherty</span></a></div>
+    <div id="Blair" class="normal-button-wrap normal-button-wrap--orange" onclick="unhide('Blair');" style="position: fixed; left: 5%; top: 70%; z-index: -3; visibility: hidden;">
+      <a class="btn normal-button" style="cursor: url(./src/img/cursor.cur),move"><span class="btn-text-gradient--silver">Blair</span></a></div>
+    
+    <div id="continue" class="normal-button-wrap normal-button-wrap--silver" onclick="check();" style="position: fixed; right: 10%; bottom: 5%; /*width: 18%;*/ z-index: -3; visibility: hidden;">
+      <a class="btn normal-button" style="cursor: url(./src/img/cursor.cur),move"><span class="btn-text-gradient--silver">Start</span></a></div>
+    <div id="SReturn" class="normal-button-wrap normal-button-wrap--silver" style="position: fixed; left: 5%; bottom: 5%; z-index: -3; visibility: hidden;" onclick="dispHome();">
+      <a class="btn normal-button" style="cursor: url(./src/img/cursor.cur),move"><span class="btn-text-gradient--silver">↺</span></a></div>
+    <div id="susumu" class="normal-button-wrap normal-button-wrap--silver"  onclick="pass();" style="position: fixed; right: 10%; bottom: 5%; /*width: 18%;*/ visibility: hidden; z-index: -2;">
+      <a class="btn normal-button" style="cursor: url(./src/img/cursor.cur),move"><span class="btn-text-gradient--silver">OK</span></a></div>
+    <div id="FReturn" class="normal-button-wrap normal-button-wrap--silver"  onclick="dispSelect();" style="position: fixed; right: 10%; bottom: 18%; /*width: 18%;*/ visibility: hidden; z-index: -2;">
+      <a class="btn normal-button" style="cursor: url(./src/img/cursor.cur),move"><span class="btn-text-gradient--silver">↺</span></a></div>
+<!-- SelectionPage  -->
+  
+<!-- HelpPage -->
+    <img src="./src/img/Manual.png" id="Manual" style="position: absolute; top: 0; left: 31.5%; width: 35%; visibility: hidden;">
+    <img src="./src/img/TutoP_1.png" id="page1" style="position: absolute; top: 0; right: 0; width: 10%; visibility: hidden; ">
+    <img src="./src/img/TutoP_2.png" id="page2" style="position: absolute; top: 0; right: 0; width: 10%; visibility: hidden; ">
+    <img src="./src/img/TutoP_3.png" id="page3" style="position: absolute; top: 0; right: 0; width: 10%; visibility: hidden; ">
+    <img src="./src/img/TutoP_4.png" id="page4" style="position: absolute; top: 0; right: 0; width: 10%; visibility: hidden; ">
+    <img src="./src/img/TutoP_5.png" id="page5" style="position: absolute; top: 0; right: 0; width: 10%; visibility: hidden; ">
+    <img src="./src/img/TutoP_6.png" id="page6" style="position: absolute; top: 0; right: 0; width: 10%; visibility: hidden; ">
+    <img src="./src/img/TutoP_7.png" id="page7" style="position: absolute; top: 0; right: 0; width: 10%; visibility: hidden; ">
+    <img src="./src/img/TutoP_8.png" id="page8" style="position: absolute; top: 0; right: 0; width: 10%; visibility: hidden; ">
+    <img src="./src/img/TutoP_9.png" id="page9" style="position: absolute; top: 0; right: 0; width: 10%; visibility: hidden; ">
+    <img src="./src/img/TutoP_10.png" id="page10" style="position: absolute; top: 0; right: 0; width: 10%; visibility: hidden; ">
+    <div class="slideshow">
+    <input type="radio" name="slideshow" id="switch1">
+    <input type="radio" name="slideshow" id="switch2">
+    <input type="radio" name="slideshow" id="switch3">
+    <input type="radio" name="slideshow" id="switch4">
+    <input type="radio" name="slideshow" id="switch5">
+    <input type="radio" name="slideshow" id="switch6">
+    <input type="radio" name="slideshow" id="switch7">
+    <input type="radio" name="slideshow" id="switch8">
+    <input type="radio" name="slideshow" id="switch9">
+    <input type="radio" name="slideshow" id="switch10">
+    <div id="slides" class="slideContents" style="visibility: hidden;">
+      <section id="slide1">
+        <img src="./src/img/Tuto_1.png" style="height: 70vh; ">
+      </section>
+      <section id="slide2">
+        <img src="./src/img/Tuto_2.png" style="height: 70vh; ">
+      </section>
+      <section id="slide3">
+        <img src="./src/img/Tuto_3.png" style="height: 70vh; ">
+      </section>
+      <section id="slide4">
+        <img src="./src/img/Tuto_4.png" style="height: 70vh; ">
+      </section>
+      <section id="slide5">
+        <img src="./src/img/Tuto_5.png" style="height: 70vh; ">
+      </section>
+      <section id="slide6">
+        <img src="./src/img/Tuto_6.png" style="height: 70vh; ">
+      </section>
+      <section id="slide7">
+        <img src="./src/img/Tuto_7.png" style="height: 70vh; ">
+      </section>
+      <section id="slide8">
+        <img src="./src/img/Tuto_8.png" style="height: 70vh; ">
+      </section>
+      <section id="slide9">
+        <img src="./src/img/Tuto_9.png" style="height: 70vh; ">
+      </section>
+      <section id="slide10">
+        <img src="./src/img/Tuto_10.png" style="height: 70vh; ">
+      </section>
+    </div>
+    <p class="arrow prev" id="PreArrow"onclick="storeprev(); dispPage();" style="visibility: hidden;">
+      <i class="ico"></i>
+      <label for="switch1"></label>
+      <label for="switch2"></label>
+      <label for="switch3"></label>
+      <label for="switch4"></label>
+      <label for="switch5"></label>
+      <label for="switch6"></label>
+      <label for="switch7"></label>
+      <label for="switch8"></label>
+      <label for="switch9"></label>
+      <label for="switch10"></label>
+    </p>
+    <p class="arrow next" id="NextArrow" onclick="storenext(); dispPage();" style="visibility: hidden;">
+      <i class="ico"></i>
+      <label for="switch1"></label>
+      <label for="switch2"></label>
+      <label for="switch3"></label>
+      <label for="switch4"></label>
+      <label for="switch5"></label>
+      <label for="switch6"></label>
+      <label for="switch7"></label>
+      <label for="switch8"></label>
+      <label for="switch9"></label>
+      <label for="switch10"></label>
+    </p>
+    </div>
+    <div id="HReturn" class="normal-button-wrap normal-button-wrap--silver" style="position: fixed; left: 2%; top: 5%; visibility: hidden; z-index: -2;" onclick="dispHome();">
+      <a class="btn normal-button" style="cursor: url(./src/img/cursor.cur),move"><span class="btn-text-gradient--silver">↺</span></a></div>
+<!-- HelpPage -->
+
+<!-- AboutPage -->
+    <img src="./src/img/aboutPage.png" id="About_exp" style="visibility: hidden; width: 40%; position: fixed; left: 45%; top: 20%">
+    <img src="./src/img/navi.png" id="Anavi" style="visibility: hidden; width: 3%; position: fixed; left: 25%; top: 26%;">
+
+    <div id="About" class="normal-button-wrap normal-button-wrap--silver" onclick="switchLink('About');" style="position: fixed; left: 5%; top: 25%; visibility: hidden; z-index: -2;"> 
+     <a class="btn normal-button" style="cursor: url(./src/img/cursor.cur),move"><span class="btn-text-gradient--silver">About</span></a></div>
+    <div id="Links" class="normal-button-wrap normal-button-wrap--silver" onclick="switchLink('Links');" style="position: fixed; left: 5%; top: 40%; visibility: hidden; z-index: -2;"> 
+     <a class="btn normal-button" style="cursor: url(./src/img/cursor.cur),move"><span class="btn-text-gradient--silver">Links</span></a></div>
+    <div id="AReturn" class="normal-button-wrap normal-button-wrap--silver" style="position: fixed; left: 5%; bottom: 5%; visibility: hidden; z-index: -2;" onclick="dispHome();">
+     <a class="btn normal-button" style="cursor: url(./src/img/cursor.cur),move"><span class="btn-text-gradient--silver">↺</span></a></div>
+
+    <p id="Links_exp" style="visibility: hidden; font-size: 210%; ">
+      <img src="./src/img/Links_1.png" style="width: 40%; position: fixed; left: 40%; top: 5%">
+      <a href="https://www.nicovideo.jp/user/17190021" style="position: fixed; left: 45%; top: 25%; color: white;">https://www.nicovideo.jp/user/17190021</a>
+      <a href="http://pngimg.com/download/58316" style="position: fixed; left: 45%; top: 30%; color: white;">http://pngimg.com/download/58316</a>
+      <a href="http://pngimg.com/download/58288" style="position: fixed; left: 45%; top: 35%; color: white;">http://pngimg.com/download/58288</a>
+      <a href="http://pngimg.com/download/58286" style="position: fixed; left: 45%; top: 40%; color: white;">http://pngimg.com/download/58286</a>
+      <a href="http://pngimg.com/download/58283" style="position: fixed; left: 45%; top: 45%; color: white;">http://pngimg.com/download/58283</a>
+      <a href="https://www.shutterstock.com/zh/image-illustration/futuristic-night-city-downtown-digital-cityscape-1584375781" style="position: fixed; left: 45%; top: 50%; color: white;">https://www.shutterstock.com/zh/image-...</a>
+      <a href="https://pngtree.com/so/sale" style="position: fixed; left: 45%; top: 55%; color: white;">https://pngtree.com/so/sale</a>
+      <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=964606208" style="position: fixed; left: 45%; top: 60%;  color: white;">https://steamcommunity.com/sharedfiles/...</a>
+      <a href="http://sasabuneya.starfree.jp/" style="position: fixed; left: 45%; top: 65%; color: white;">http://sasabuneya.starfree.jp/</a>
+      <a href="https://www.pixiv.net/artworks/83192960" style="position: fixed; left: 45%; top: 70%; color: white;">https://www.pixiv.net/artworks/83192960</a>
+      <a href="https://pixabay.com/zh/vectors/casino-chips-poker-cards-gambling-157595/" style="position: fixed; left: 45%; top: 75%; color: white;">https://pixabay.com/zh/vectors/casino-...</a>
+      <a href="https://www.kindpng.com/imgv/Twmob_disco-ball-png-transparent-png-download/" style="position: fixed; left: 45%; top: 80%; color: white;">https://www.kindpng.com/imgv/Twmob...</a>
+      <a href="https://www.clipart.email/download/7614413.html" style="position: fixed; left: 45%; top: 85%; color: white;">https://www.clipart.email/...</a>
+      <a href="https://pngtree.com/freepng/cartoon-police-badge_1349207.html" style="position: fixed; left: 45%; top: 90%; color: white;">https://pngtree.com/freepng/cartoon-...</a>
+    </p>
+<!-- AboutPage -->
+
+  <div id="myapp" style="z-index: 3;"></div>
+
+</body>
+</html>

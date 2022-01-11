@@ -1,0 +1,56 @@
+
+# Changelog
+
+- 2020/07/05 : Draw an ugly map
+- 2020/07/08 : Finish an animation only used for testing
+- 2020/07/08 : Homepage
+- 2020/07/10 : Finish a prototype of the game phase
+- 2020/07/11 : Finish the function `payToll`, `calculateBattleResult` and `upGrade`
+- 2020/07/12 : Add a side bar to check each player's status
+- 2020/07/13 : Allow users to move the map with keyboard to get a better view
+- 2020/07/13 : Add a dummy character selection page
+- 2020/07/13 : Apply new tile style
+- 2020/07/13 : Merged action dice acts
+- 2020/07/13 : MVP release
+- 2020/07/15: Character selecting page enabled
+- 2020/07/18: Win and lose condition added but not implemented
+- 2020/07/19: AI implemented (major feature)
+- 2020/07/19: Alpha release
+- 2020/07/21: Provide visual hints for tile's owner, camera will focus on the player you choose initially
+- 2020/07/23: Fix bugs of selecting rivals during battles.
+- 2020/07/24: Update all attributes of player at the end of each round.
+- 2020/07/24: Add family maintenance and police bribery fee.
+- 2020/07/24: Add help page.
+- 2020/07/24: Arrange the visuals so that they're more cohesive.
+- 2020/07/25: Add events 1-20.
+- 2020/07/26: Add jail related functions.
+- 2020/07/26: Redesign the battle system to be more balanced.
+- 2020/07/26: Fix event system.
+- 2020/07/26: Add sound effects.
+- 2020/07/26: Add events 21-30.
+- 2020/07/26: Avoid game data from overflowing.
+- 2020/07/26: Beta release
+- 2020/07/27: Update homepage.
+- 2020/07/28: Fix bugs of event system.
+- 2020/07/29: Add frame for story events.
+- 2020/07/29: Adjust help page.
+- 2020/07/30: AI log implemented.
+- 2020/07/31: create `doc` directory to store all tech com documents.
+- 2020/07/31: Add hints for effects of events.
+- 2020/07/31: Finish draft of the trailer video.
+- 2020/08/01: Add special skills to different characters.
+- 2020/08/01: Fix multiple bugs.
+- 2020/08/01: Update the poster with spy feature.
+- 2020/08/01: Fix battle and upgrade bugs.
+- 2020/08/02: Arrange the visuals (minor).
+- 2020/08/02: Modify player initial attributes to be more balanced.
+- 2020/08/02: Update booklet.
+- 2020/08/02: Fix bugs of event system and AI actions.
+- 2020/08/02: RC release
+- 2020/08/03: Add visual hints for tiles before battle.
+- 2020/08/03: Make income (wealth per round) related to player attributes.
+- 2020/08/03: Arrange priorities of AI when sending members to a tile.
+- 2020/08/03: Fix bugs when restarting the game.
+- 2020/08/04: Merge HTMLs.
+
+ 

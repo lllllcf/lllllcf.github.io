@@ -1,0 +1,141 @@
+.slideshow {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 80%;
+	overflow: hidden;
+}
+input[name="slideshow"] {
+	display: none;
+}
+.slideContents {
+	display: flex;
+	position: relative;
+	width: 1000%;
+	min-height: 100px;
+	text-align: center;
+	-webkit-user-select: none;
+	user-select: none;
+	transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.slideContents section {
+	width: 10%;
+}
+/*.slideContents section img {
+	max-width: 100%;
+	padding: 0 50px;
+	box-sizing: border-box;
+	vertical-align: middle;
+}*/
+.arrow,
+.arrow label,
+.arrow .ico {
+	position: absolute;
+}
+.arrow {
+	top: 0;
+	margin: 0;
+	transition: background .3s;
+}
+.prev {
+	left: 0;
+}
+.next {
+	right: 0;
+}
+.arrow:hover {
+	background: rgba(255,255,255,.2);
+}
+.arrow,
+.arrow label {
+	cursor: url(../img/cursor.cur),move;
+	width: 70px;
+	height: 100%;
+}
+.arrow label {
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+.arrow .ico {
+	top: calc(50% - 6px);
+	width: 12px;
+	height: 12px;
+	border-top: 3px solid #fff;
+}
+.prev .ico {
+	left: 50%;
+	border-left: 3px solid #fff;
+	transform: rotate(-45deg);
+	transition: left .3s cubic-bezier(0.215, 0.61, 0.355, 1), opacity .3s;
+}
+.next .ico {
+	right: 50%;
+	border-right: 3px solid #fff;
+	transform: rotate(45deg);
+	transition: right .3s cubic-bezier(0.215, 0.61, 0.355, 1), opacity .3s;
+}
+.arrow:hover .ico {
+	opacity: .6;
+}
+.prev:hover .ico {
+	left: calc(50% - 6px);
+}
+.next:hover .ico {
+	right: calc(50% - 6px);
+}
+#switch1:checked ~ .slideContents {
+	transform: translateX(0);
+}
+#switch2:checked ~ .slideContents {
+	transform: translateX(-10%);
+}
+#switch3:checked ~ .slideContents {
+	transform: translateX(-20%);
+}
+#switch4:checked ~ .slideContents {
+	transform: translateX(-30%);
+}
+#switch5:checked ~ .slideContents {
+	transform: translateX(-40%);
+}
+#switch6:checked ~ .slideContents {
+	transform: translateX(-50%);
+}
+#switch7:checked ~ .slideContents {
+	transform: translateX(-60%);
+}
+#switch8:checked ~ .slideContents {
+	transform: translateX(-70%);
+}
+#switch9:checked ~ .slideContents {
+	transform: translateX(-80%);
+}
+#switch10:checked ~ .slideContents {
+	transform: translateX(-90%);
+}
+.arrow label {
+	pointer-events: none;
+}
+#switch1:checked ~ .prev label[for="switch9"],
+#switch2:checked ~ .prev label[for="switch1"],
+#switch3:checked ~ .prev label[for="switch2"],
+#switch4:checked ~ .prev label[for="switch3"],
+#switch5:checked ~ .prev label[for="switch4"],
+#switch6:checked ~ .prev label[for="switch5"],
+#switch7:checked ~ .prev label[for="switch6"],
+#switch8:checked ~ .prev label[for="switch7"],
+#switch9:checked ~ .prev label[for="switch8"],
+
+#switch1:checked ~ .next label[for="switch2"],
+#switch2:checked ~ .next label[for="switch3"],
+#switch3:checked ~ .next label[for="switch4"],
+#switch4:checked ~ .next label[for="switch5"],
+#switch5:checked ~ .next label[for="switch6"],
+#switch6:checked ~ .next label[for="switch7"],
+#switch7:checked ~ .next label[for="switch8"],
+#switch8:checked ~ .next label[for="switch9"],
+#switch9:checked ~ .next label[for="switch1"] {
+	pointer-events: auto;
+}
