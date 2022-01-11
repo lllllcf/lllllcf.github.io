@@ -1,4 +1,3 @@
-
 function hide(selectedChara){
 	document.getElementById(selectedChara+'_exp').style.visibility="hidden";
     document.getElementById(selectedChara+'_tte').style.visibility="hidden";
